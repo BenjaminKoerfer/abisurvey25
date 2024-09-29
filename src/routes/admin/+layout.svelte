@@ -156,7 +156,10 @@
 			</div>
 		{/if}
 		<div class="m-4 ml-auto rounded-full bg-slate-900 p-4 text-white">
-			<a class="hover:text-sky-500" href="/logout">Logout</a>
+			<!-- <a class="hover:text-sky-500" href="/logout">Logout</a> -->
+			<form method="post" action="/logout">
+				<button type="submit" class="hover:text-sky-500">Logout</button>
+			</form>
 		</div>
 	</nav>
 	<slot />
