@@ -1,15 +1,12 @@
-version: "3"
-
 services:
   app:
-    image: ghcr.io/locrealloc/abisurvey:latest
-    # image: ghcr.io/locrealloc/abisurvey:develop
+    build: .
     container_name: abisurvey
     restart: always
     depends_on:
       - database
     env_file:
-      - .env.local
+      - .env
     ports:
       - "3000:3000"
   database:
@@ -17,7 +14,7 @@ services:
     container_name: db
     restart: always
     env_file:
-      - .env.local
+      - .env
     ports:
       - "5432:5432"
     volumes:

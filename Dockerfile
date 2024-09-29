@@ -1,7 +1,7 @@
 # made by u/bluepuma77
 
 # stage build
-FROM node:16
+FROM node:18
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ RUN npm audit fix
 RUN npm run build
 
 # stage run
-FROM node:16
+FROM node:18
 
 WORKDIR /app
 
@@ -33,5 +33,7 @@ RUN npm audit fix
 
 # copy built SvelteKit app to /app
 COPY --from=0 /app/build ./
+
+COPY tsconfig.json ./
 
 CMD ["node", "./index.js"]
