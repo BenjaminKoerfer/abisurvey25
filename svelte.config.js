@@ -15,6 +15,9 @@ const config = {
 		adapter: adapter({
 			envPrefix: "APP_",
 		}),
+		csrf: {
+			checkOrigin: false,
+		},
 	},
 	prerender: {
 		crawl: false,
