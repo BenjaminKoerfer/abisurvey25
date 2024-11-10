@@ -65,12 +65,15 @@ export const actions: Actions = {
 			.setExpirationTime("5d")
 			.sign(secret);
 
+		console.log("signed");
+
 		cookies.set("token", jwt.toString(), {
 			path: "/admin",
 			sameSite: "strict",
 			secure: !dev,
 			maxAge: 60 * 60 * 24 * 5,
 		});
+		console.log("cookies set");
 
 		rdr_to_home();
 	},
